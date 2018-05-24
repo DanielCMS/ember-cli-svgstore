@@ -46,7 +46,7 @@
   "dependencies": {
     "broccoli-funnel": "^1.0.1",
     "broccoli-merge-trees": "^1.1.1",
-    "broccoli-svgstore": "^0.4.0",
+    "broccoli-svgstore": "git+https://github.com/DanielCMS/broccoli-svgstore.git",
     "broccoli-source": "^1.1.0",
     "make-array": "^1.0.1",
     "merge": "^1.2.0"

@@ -30,6 +30,8 @@ module.exports = {
 
     var options = this.options();
     var globalExclude = options.excludeSourceFiles;
+    var target = options.files.outputFile.split("/");
+    var file = target[target.length - 1].split(".svg")[0];
     var excludeGlobs = makeArray(this.options().files).reduce(function(result, fileSpec) {
       var paths = [];
 
@@ -38,7 +40,7 @@ module.exports = {
         paths = makeArray(fileSpec.sourceDirs).filter(function(dir) {
           return dir.match(/^public\//);
         }).map(function(dir) {
-          return dir.replace(/^public\//, '') + '/*';
+          return dir.replace(/^public\//, '') + '/!(' + file + ')*.svg';
         });
       }
 
